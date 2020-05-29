@@ -17,7 +17,7 @@ body {
 .menu-btn {
   cursor: pointer;
   margin-bottom: -1em;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 3em;
   right: 4vw;
@@ -46,13 +46,18 @@ body {
   position: absolute;
   z-index: 999;
   top: 3em;
-  left: 10vw;
+  left: 4vw;
 }
 
 aside {
   grid-area: asidebar;
   background-color: black;
   padding: 3em 0;
+  position: fixed;
+  height: 100vh;
+  right: 0;
+  z-index: 10;
+  width: 10%;
 }
 aside nav {
   display: flex;
@@ -85,6 +90,48 @@ main {
   grid-area: main;
   color: white;
 }
+/* menu section*/
+main .menu {
+  background-color: rgba(0, 0, 0, 0.96);
+  height: 100vh;
+  width: 90%;
+  position: fixed;
+  z-index: 4;
+  text-align: center;
+  top: 0vh;
+  right: -80vw;
+  transition: all ease-in-out 0.2s;
+}
+main .menu ul {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+main .menu ul li {
+  list-style: none;
+  margin-bottom: 45%;
+  opacity: 0;
+  transition: all ease-in-out 0.2s;
+}
+main .menu ul li a {
+  text-decoration: none;
+  color: #e1e1e1;
+  font-size: 2em;
+  font-weight: 900;
+}
+main .menu ul li:nth-child(1) {
+  transform: translateX(80px);
+}
+main .menu ul li:nth-child(2) {
+  transform: translateX(150px);
+}
+main .menu ul li:nth-child(3) {
+  transform: translateX(180px);
+}
+main .menu ul li:nth-child(4) {
+  transform: translateX(240px);
+}
+
 /* home section */
 main .home {
   background-image: url("./imgs/IMG_-2.png");
@@ -178,6 +225,118 @@ main .about .header-para button a {
   color: #e1e1e1;
   font-size: 3em;
 }
+main .contact_me {
+  background-color: #1b1a1a;
+  position: relative;
+  height: 100vh;
+  position: relative;
+  top: -200vh;
+  z-index: 3;
+}
+main .contact_me hr.center {
+  width: 30%;
+  margin: 0;
+  background-color: #dccf69;
+  height: 6px;
+  border: none;
+  border-radius: 3px;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 56vh;
+  left: 27vw;
+}
+main .contact_me .content {
+  width: 40%;
+  position: absolute;
+  top: 28vh;
+  left: 5vw;
+}
+main .contact_me .content h1 {
+  font-size: 3em;
+  margin: auto;
+}
+main .contact_me .content h2 {
+  font-size: 2em;
+  margin-top: 63px;
+}
+main .contact_me .content hr {
+  width: 150px;
+  background-color: #dccf69;
+  height: 6px;
+  border: none;
+  border-radius: 3px;
+  transform: translateX(-200px);
+}
+main .contact_me .content p:first-of-type {
+  font-size: 1.5em;
+  line-height: 1.5;
+  color: #bdbdbd;
+  width: 84%;
+}
+main .contact_me .content p {
+  font-size: 1.5em;
+  margin-left: 27px;
+}
+main .contact_me .contact_form {
+  float: right;
+  width: 50%;
+  position: absolute;
+  top: 25vh;
+  left: 44vw;
+}
+main .contact_me .contact_form div {
+  margin: 40px 0;
+}
+main .contact_me .contact_form div label {
+  font-size: 2.5em;
+  margin-right: 10%;
+  width: 20%;
+}
+main .contact_me .contact_form div label.mess {
+  font-size: 2.5em;
+  margin-right: 5%;
+  width: 20%;
+  position: relative;
+  top: -230px;
+}
+main .contact_me .contact_form div input {
+  width: 70%;
+  background: none;
+  border: 3px solid #e2e0dd;
+  border-radius: 25px;
+  height: 50px;
+  color: #bdbdbd;
+  font-size: 1.5em;
+  padding: 5px;
+}
+main .contact_me .contact_form div input::placeholder {
+  opacity: 0;
+}
+main .contact_me .contact_form input[type="submit"] {
+  background: none;
+  color: white;
+  font-size: 2em;
+  padding: 10px;
+  border: 3px solid #dccf69;
+  border-radius: 25px;
+  width: 150px;
+  float: right;
+  margin-right: 25px;
+  margin-top: -25px;
+}
+main .contact_me .contact_form div textarea {
+  width: 69%;
+  background: none;
+  border: 3px solid #e2e0dd;
+  border-radius: 25px;
+  height: 251px;
+  color: #bdbdbd;
+  font-size: 1.5em;
+  padding: 4px;
+}
+main .contact_me .contact_form div textarea::placeholder {
+  opacity: 0;
+}
 /* responsive code */
 @media only screen and (max-width: 800px) {
   .container {
@@ -197,8 +356,23 @@ main .about .header-para button a {
     top: 4em;
     right: 9vw;
   }
+  main .menu {
+    background-color: rgba(0, 0, 0, 0.96);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 4;
+    text-align: center;
+    top: -10vh;
+    left: 100vw;
+  }
   aside {
     padding: 0;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    bottom: 0;
+    height: 15vh;
   }
   aside nav .nav-link {
     display: none;
@@ -214,15 +388,14 @@ main .about .header-para button a {
     margin-right: 40px;
   }
   aside nav .social-link img {
-    width: 54px;
-    /* padding: 15px 0px; */
+    width: 50px;
   }
   main .home {
     background-image: url("./imgs/IMG_-2.png");
     background-position: left;
     background-color: rgba(0, 0, 0, 0.93);
     background-size: cover;
-    /* background-blend-mode: screen; */
+
     background-repeat: no-repeat;
     height: 85vh;
   }
@@ -301,5 +474,108 @@ main .about .header-para button a {
     text-decoration: none;
     color: #e1e1e1;
     font-size: 2.5em;
+  }
+  main .contact_me {
+    background-color: #1b1a1a;
+    position: relative;
+    height: auto;
+    position: relative;
+    top: -185vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 10em 2em;
+  }
+  main .contact_me .content {
+    width: unset;
+    position: unset;
+
+    margin: 50px 0;
+  }
+  main .contact_me .content h1 {
+    font-size: 2em;
+    margin: auto;
+  }
+  main .contact_me .content hr {
+    width: 150px;
+    background-color: #dccf69;
+    height: 6px;
+    border: none;
+    border-radius: 3px;
+    transform: translateX(-145px);
+  }
+  main .contact_me .content h2 {
+    font-size: 1.5em;
+    margin-top: 63px;
+  }
+  main .contact_me hr.center {
+    display: none;
+  }
+  main .contact_me .contact_form {
+    float: none;
+    width: unset;
+    position: unset;
+    /* top: 25vh; */
+    /* margin: 0 23px; */
+    /* left: 44vw; */
+  }
+  main .contact_me .contact_form div {
+    margin: 45px 20px;
+  }
+  main .contact_me .contact_form div label {
+    display: none;
+  }
+  main .contact_me .contact_form div input {
+    width: 95%;
+    background: none;
+    border: 3px solid #e2e0dd;
+    border-radius: 25px;
+    height: 50px;
+    color: #bdbdbd;
+    font-size: 1.5em;
+    padding: 5px;
+  }
+  main .contact_me .contact_form div input::placeholder {
+    font-size: 25px;
+    color: #bdbdbd;
+    text-align: center;
+    opacity: 0.5;
+  }
+  main .contact_me .contact_form div textarea {
+    width: 95%;
+    background: none;
+    border: 3px solid #e2e0dd;
+    border-radius: 25px;
+    height: 251px;
+    color: #bdbdbd;
+    font-size: 1.5em;
+    padding: 10px;
+  }
+  main .contact_me .contact_form div textarea::placeholder {
+    font-size: 25px;
+    color: #bdbdbd;
+    text-align: center;
+    opacity: 0.5;
+  }
+  main .contact_me .contact_form input[type="submit"] {
+    margin-top: 20px;
+  }
+  main .menu {
+    background-color: rgba(0, 0, 0, 0.96);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 4;
+    text-align: center;
+    top: -10vh;
+  }
+  main .menu ul {
+    position: absolute;
+    top: 35%;
+    left: 26%;
+  }
+  main .menu ul li {
+    list-style: none;
+    margin-bottom: 35%;
   }
 }
