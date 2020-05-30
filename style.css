@@ -337,6 +337,35 @@ main .contact_me .contact_form div textarea {
 main .contact_me .contact_form div textarea::placeholder {
   opacity: 0;
 }
+main .gallery {
+  background-color: #1b1a1a;
+  position: relative;
+  height: 100vh;
+  top: -303vh;
+  z-index: 5;
+}
+main .gallery .header {
+  position: absolute;
+  top: 20vh;
+  left: 10vh;
+}
+main .gallery h2 {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+main .gallery hr {
+  width: 100px;
+  background-color: #dccf69;
+  height: 4px;
+  border: none;
+  border-radius: 3px;
+  transform: translateX(-100px);
+}
+main .gallery p {
+  font-size: 1.5em;
+  color: #bbbbbb;
+}
 /* responsive code */
 @media only screen and (max-width: 800px) {
   .container {
