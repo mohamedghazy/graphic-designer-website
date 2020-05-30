@@ -229,7 +229,6 @@ main .contact_me {
   background-color: #1b1a1a;
   position: relative;
   height: 100vh;
-  position: relative;
   top: -200vh;
   z-index: 3;
 }
@@ -281,26 +280,26 @@ main .contact_me .contact_form {
   float: right;
   width: 50%;
   position: absolute;
-  top: 25vh;
-  left: 44vw;
+  top: 22vh;
+  left: 43vw;
 }
 main .contact_me .contact_form div {
-  margin: 40px 0;
+  margin: 25px 0;
 }
 main .contact_me .contact_form div label {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-right: 10%;
   width: 20%;
 }
 main .contact_me .contact_form div label.mess {
-  font-size: 2.5em;
-  margin-right: 5%;
+  font-size: 2em;
+  margin-right: 3%;
   width: 20%;
   position: relative;
-  top: -230px;
+  top: -232px;
 }
 main .contact_me .contact_form div input {
-  width: 70%;
+  width: 65%;
   background: none;
   border: 3px solid #e2e0dd;
   border-radius: 25px;
@@ -321,11 +320,11 @@ main .contact_me .contact_form input[type="submit"] {
   border-radius: 25px;
   width: 150px;
   float: right;
-  margin-right: 25px;
-  margin-top: -25px;
+  margin-right: 50px;
+  margin-top: 0px;
 }
 main .contact_me .contact_form div textarea {
-  width: 69%;
+  width: 68%;
   background: none;
   border: 3px solid #e2e0dd;
   border-radius: 25px;
