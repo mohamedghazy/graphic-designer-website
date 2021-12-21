@@ -1,0 +1,415 @@
+
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Comfortaa", cursive;
+   background: #1b1a1a;
+ }
+ a{
+   cursor: pointer;
+ }
+ .container {
+   position: relative;
+   z-index: 1;
+   top: 0;
+   display: grid;
+   grid-template-columns:100%;
+   grid-template-rows: 85% 15%;
+   grid-template-areas: 
+   " main" 
+   "asidebar"
+ ;
+ }
+ .menu-btn {
+   cursor: pointer;
+   margin-bottom: -1em;
+   position: fixed;
+   z-index: 999;
+   top: 8%;
+   right: 4%;
+ }
+ .menu-btn .one,
+ .menu-btn .two,
+ .menu-btn .three {
+   display: block;
+   margin-bottom: 5px;
+   background-color: white;
+   border-radius: 5px;
+   height: 5px;
+   transition: all ease-in-out 0.5s;
+ }
+ .menu-btn .one {
+   width: 50px;
+ }
+ .menu-btn .two {
+   width: 30px;
+   transform: translateX(20px);
+ }
+ .menu-btn .three {
+   width: 20px;
+   transform: translateX(30px);
+   opacity: 1;
+ }
+ .menu-btn .one.open {
+   transform: rotate(-45deg) translateY(-15px);
+   transform-origin: right;
+ }
+ .menu-btn .two.open {
+   width: 50px;
+   transform: rotate(40deg) translatey(15px);
+   transform-origin: right;
+ }
+ .menu-btn .three.open {
+   width: 20px;
+   transform: translateX(0px);
+   opacity: 0;
+ }
+ .logo {
+   position: absolute;
+   z-index: 999;
+   top: 2em;
+   left: 3vw;
+ }
+ .logo img {
+   width: 125px;
+ }
+ aside {
+   grid-area: asidebar;
+   background-color: black;
+   padding: 0;
+   position: fixed;
+   width:100%;
+   bottom: 0;
+   z-index: 888;
+   height: 15vh;
+   display: none;
+ }
+ aside nav {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ aside nav .nav-link {
+  display: none;
+ }
+ aside nav .social-link {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin-top: 7%; 
+ }
+ aside nav .social-link a{margin-right: 3em;}
+ aside nav .social-link img {
+   width: 40px;
+ }
+ main {
+   grid-area: main;
+   color: white;
+ }
+ /* menu section*/
+   main .menu {
+     background-color: rgba(0, 0, 0, 0.96);
+     height: 100vh;
+     width: 100%;
+     position: fixed;
+     z-index: 777;
+     text-align: center;
+     top: 0vh;
+     right: -125vw;
+     transition: all ease-in-out 0.6s;
+   }
+   main .menu.openMenu {
+     right: 0vw;
+   }
+   main .menu ul {
+     position: absolute;
+     top: 25%;
+     left: 22%;
+   }
+   main .menu ul li {
+     list-style: none;
+     margin-bottom: 45%;
+   }
+   main .menu ul li a {
+     text-decoration: none;
+     color: #e1e1e1;
+     font-size: 2em;
+     font-weight: 900;
+   }
+   main .menu ul li:nth-child(1) {
+     transform: translateX(80px);
+     opacity: 0;
+     transition: all ease-in-out 0.2s;
+   }
+   main .menu ul li:nth-child(2) {
+     transform: translateX(150px);
+     opacity: 0;
+   }
+   main .menu ul li:nth-child(3) {
+     transform: translateX(180px);
+     opacity: 0;
+   }
+   main .menu ul li:nth-child(4) {
+     transform: translateX(240px);
+     opacity: 0;
+   }
+   main .menu ul li:nth-child(1).openMenu {
+     transform: translateX(0px);
+     opacity: 1;
+   }
+   main .menu ul li:nth-child(2).openMenu {
+     transform: translateX(0px);
+     opacity: 1;
+   }
+   main .menu ul li:nth-child(3).openMenu {
+     transform: translateX(0px);
+     opacity: 1;
+   }
+   main .menu ul li:nth-child(4).openMenu {
+     transform: translateX(0px);
+     opacity: 1;
+   }
+/* gallery section */
+main .gallery {
+   background-color: #1b1a1a;
+   position: relative;
+   z-index: 5;
+   transition: all ease-in-out 1s;
+ }
+ 
+ main .gallery .header {
+   position: absolute;
+   top: 23vh;
+   left: 3vh;
+ }
+ main .gallery h2 {
+   font-size: 1.5em;
+   font-weight: 600;
+   margin-bottom: 20px;
+ }
+ main .gallery hr {
+   width: 90px;
+   background-color: #dccf69;
+   height: 4px;
+   border: none;
+   border-radius: 3px;
+   transform: translateX(-54px);
+ }
+ main .gallery p {
+   font-size: 1em;
+   color: #bbbbbb;
+ }
+ .gallery .work_cards{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   text-align: center;
+   position: absolute;
+   top:22em ;
+}
+.gallery .work_card{
+   width: 100%;
+   border-radius: 25px;
+   margin-bottom: 5em;
+}
+.gallery .work_card .work_img{
+   overflow: hidden;
+   border-radius: 25px;
+   margin-bottom: 2em;
+}
+.gallery .work_card .work_img img{
+   width: 90%;
+   transition: all .8s ease-in-out;
+   border-radius: 25px;
+}
+.gallery .work_card .work_content h3{
+   color: white;
+   font-size: 25px;
+   margin-bottom: 10px;
+}
+.gallery .work_card .work_content p{
+   color: #bbbbbb;
+   font-size: 18px;
+   margin-bottom: 25px;
+}
+.gallery .work_card .work_content a{
+   margin: auto;
+   text-decoration: none;
+   border-radius: 49px;
+   padding: 10px;
+   border: solid 2px #dccf69;
+   color: #bbbbbb;  
+   transition: all 0.5s ease-in-out;
+}
+.gallery .work_card .work_content a:hover{
+   background-color: #dccf69;
+   color: white;
+}
+@media only screen and (min-width:768px){
+   .container {
+      /* height: 100vh; */
+      position: relative;
+      z-index: 1;
+      top: 0;
+      display: grid;
+      grid-template-columns: 90% 10%;
+      grid-template-rows: 100%;
+      grid-template-areas: "main asidebar";
+    }
+    
+    .logo img {
+      width: unset;
+    }
+    aside {
+      grid-area: asidebar;
+      background-color: black;
+      padding: 3em 0;
+      position: fixed;
+      height: 100vh;
+      right: 0;
+      z-index: 888;
+      width: 10%;
+      display: inline-block;
+    }
+    aside nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    aside nav .nav-link{
+      display: block;
+      position: absolute;
+      top: 17%;
+      right: 20%;
+    }
+    aside nav .nav-link ul li {
+      list-style: none;
+      margin-top: 13vh;
+      transform: rotate(-90deg);
+    }
+    aside nav .nav-link a {
+      text-decoration: none;
+      font-size: 1.8em;
+      color: #e1e1e1;
+    }
+    aside nav .social-link {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 52%;
+      right: 5%;
+    }
+    aside nav .social-link img {
+      width: 40px;
+      padding: 15px 0px;
+    }
+    
+    main {
+      grid-area: main;
+      color: white;
+    }
+    /* menu section*/
+    main .menu {
+      background-color: rgba(0, 0, 0, 0.96);
+      height: 100vh;
+      width: 91%;
+      position: fixed;
+      z-index: 777;
+      text-align: center;
+      top: 0vh;
+      right: -125vw;
+      transition: all ease-in-out 0.6s;
+    }
+    main .menu.openMenu {
+      right: 9vw;
+    }
+    main .menu ul {
+      position: absolute;
+      top: 25%;
+      left: 45%;
+    }
+   main .gallery {
+      background-color: #1b1a1a;
+      position: relative;
+      transition: all ease-in-out 1s;
+    }
+    main .gallery .header {
+      position: absolute;
+      top: 20vh;
+      left: 10vh;
+    }
+    main .gallery h2 {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    main .gallery hr {
+      width: 100px;
+      background-color: #dccf69;
+      height: 4px;
+      border: none;
+      border-radius: 3px;
+      transform: translateX(-100px);
+    }
+    main .gallery p {
+      font-size: 1.5em;
+      color: #bbbbbb;
+    }
+    .gallery .work_cards{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 22em;
+  }
+    .gallery .work_card{
+        width: 30%;
+        border-radius: 25px;
+        margin: 3em 1em;
+        text-align: left;
+    }
+    .gallery .work_card .work_img{
+        overflow: hidden;
+        border-radius: 25px;
+        margin-bottom: 2em;
+    }
+    .gallery .work_card .work_img:hover img{
+        transform: scale(1.2);
+        border-radius: 25px;
+    }
+    .gallery .work_card .work_img img{
+        width: 100%;
+        transition: all .8s ease-in-out;
+        border-radius: 25px;
+    }
+    .gallery .work_card .work_content h3{
+        color: white;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .gallery .work_card .work_content p{
+        color:#bbbbbb;
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+    .gallery .work_card .work_content a{
+        margin: auto;
+        text-decoration: none;
+        border-radius: 49px;
+        padding: 10px;
+        border: solid 2px #dccf69;
+        color: #bbbbbb;  
+        transition: all 0.5s ease-in-out;
+    }
+    .gallery .work_card .work_content a:hover{
+        background-color: #dccf69;
+        color: white;
+    }
+}
