@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./imgs/logo1.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
       rel="stylesheet"
     />
-    <title>Mano Ghazy</title>
+    <title>Mano Ghazy , Graphic Designer</title>
   </head>
   <body>
     <div class="container">
@@ -19,7 +20,7 @@
         <span class="three"></span>
       </div>
       <div class="logo" style="width: 150px;">
-        <a href="#">
+        <a data-linke="home" >
           <img src="./imgs/00000.svg" alt="mano ghazy's logo" />
         </a>
       </div>
@@ -27,8 +28,8 @@
         <nav>
           <div class="nav-link">
             <ul>
-              <li><a href="#" class="active">Home</a></li>
-              <li><a href="#"> About</a></li>
+              <li><a data-linke="home">Home</a></li>
+              <li><a data-linke="about"> About</a></li>
             </ul>
           </div>
           <div class="social-link">
@@ -52,21 +53,23 @@
                 src="./imgs/icons/instagram.png"
                 alt="mano ghazy social media"
             /></a>
-            <a href="#"><img src="./imgs/icons/masseg.png" /></a>
+            <a href="#" data-linke="masseg"
+              ><img src="./imgs/icons/masseg.png"
+            /></a>
           </div>
         </nav>
       </aside>
       <main>
-        <section class="home">
+        <section class="home openSection" data-section="home">
           <div class="header-para">
             <p>Hi, Nice to meet you</p>
             <h1>I'm Mohamed</h1>
             <p>A Freelancer Graphic Designer</p>
-            <button><a href="#">Gallery</a></button>
-            <button class="gold"><a href="#">Contact</a></button>
+            <button ><a href="./pages/gallery.html" data-linke="gallery">Gallery</a></button>
+            <button class="gold" ><a href="#" data-linke="masseg">Contact</a></button>
           </div>
         </section>
-        <section class="about">
+        <section class="about" data-section="about">
           <div class="header-para">
             <p class="min">Introduction</p>
             <h1>Who am I</h1>
@@ -79,11 +82,11 @@
               So I can build multiple things like : Motion Graphics videos
               ,Branding , Graphic design,Video editing,Printing designs
             </p>
-            <button class="gold"><a href="#">Gallery</a></button>
-            <button><a href="#">Contact</a></button>
+            <button class="gold"><a href="./pages/gallery.html" data-linke="gallery">Gallery</a></button>
+            <button><a data-linke="masseg">Contact</a></button>
           </div>
         </section>
-        <section class="contact_me">
+        <section class="contact_me" data-section="masseg">
           <div class="content">
             <h1>Let's talk together</h1>
             <hr />
@@ -130,27 +133,14 @@
         </section>
         <section class="menu">
           <ul>
-            <li><a href="#"> Home</a></li>
-            <li><a href="#"> About Me</a></li>
-            <li><a href="#"> Gallery</a></li>
-            <li><a href="#"> Conract Me</a></li>
+            <li><a  data-linke="home"> Home</a></li>
+            <li><a  data-linke="about"> About Me</a></li>
+            <li><a href="./pages/gallery.html" data-linke="gallery"> Gallery</a></li>
+            <li><a  data-linke="masseg"> Conract Me</a></li>
           </ul>
-        </section>
-        <section class="gallery">
-          <div class="header">
-            <h2>My Work</h2>
-            <hr />
-            <p>Let's to see what I can do</p>
-          </div>
-          <div class="catogeries">
-            <!--add your catogaries here-->
-          </div>
-          <div class="gallery_container">
-            <!--add gallery imgs here-->
-          </div>
         </section>
       </main>
     </div>
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
